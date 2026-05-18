@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍콩반점 이용 안내</title>
+    <style>
+        /* 기본 레이아웃 초기화 */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; display: flex; justify-content: center; background-color: #f4f4f4; font-family: sans-serif; }
+        
+        .popup-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* PC 최대 너비 */
+            background-image: url('./skt0week_05hk.png'); 
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            aspect-ratio: 800 / 1050; /* 이미지의 원본 비율 유지 */
+        }
+
+        .content-text {
+            position: absolute;
+            left: 8%;  /* 좌우 여백을 조금 더 여유있게 조정 */
+            right: 8%;
+            color: #333;
+            font-weight: 800; /* 강조를 위해 두께 상향 */
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            white-space: pre-line; 
+            word-break: keep-all; /* 단어 단위 줄바꿈으로 가독성 향상 */
+            line-height: 1.3;
+        }
+
+        /* 1. 이용가능매장: 가장 큰 제목 느낌 */
+        .box-1 { 
+            top: 19.5%; 
+            height: 7%; 
+            font-size: 3.5vw; /* 모바일 대응 유동 폰트 */
+        }
+
+        /* 2. 사용불가매장 영역 수정 */
+.box-2 { 
+    top: 33%;           /* 위쪽 여백을 위해 기존보다 약 1.5% 내림 */
+    height: 38%;        /* 박스의 전체 높이 유지 */
+    font-size: 2.8vw;   /* 모바일 가독성 폰트 크기 */
+    display: flex;
+    align-items: center;    /* 수직 중앙 정렬 (위쪽 붙음 방지) */
+    justify-content: center; /* 수평 중앙 정렬 */
+    padding-top: 0;         /* 위쪽 패딩 제거 (수직 중앙 정렬을 위해) */
+    line-height: 1.4;       /* 줄 간격 최적화 */
+}
+
+/* PC 버전에서도 위치가 어긋나지 않게 조정 */
+@media (min-width: 800px) {
+    .box-2 { 
+        top: 33% !important; 
+        font-size: 21px !important; 
+    }
+}
+
+        /* 3. 포장/배달 전문매장 */
+        .box-3 { 
+            top: 78.5%; 
+            height: 16%; 
+            font-size: 2.8vw;
+        }
+
+        /* 💻 PC 환경 (800px 이상) 화면 대응 */
+        @media (min-width: 800px) {
+            .box-1 { font-size: 28px !important; }
+            .box-2 { font-size: 22px !important; }
+            .box-3 { font-size: 22px !important; }
+        }
+
+        /* 📱 아주 작은 모바일 (320px 이하) 대응 */
+        @media (max-width: 350px) {
+            .content-text { line-height: 1.2; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup-container">
+    <div class="content-text box-1">전국 홍콩반점 매장 (일부 매장 제외)</div>
+
+    <div class="content-text box-2">
+        모다천안아산점, AK광명점, 부산사직점,<br>
+        과천렛츠런파크점, 홍대입구역점, LGD파주점,<br>
+        포항해병1사단점, 강서홈플러스점, 일산벨라시티점,<br>
+        다산진건점, 안산본오점, 인천완정역점, 진주초전점,<br>
+        전북남원점, 의정부역점, 수원망포역점
+    </div>
+
+    <div class="content-text box-3">
+        인천만수점, 상일동역점, 응암점, 신풍점,<br>
+        인천계산중앙점, 명일동점, 독립문점, 부천도당점.<br>
+        송도더테라스점, 송도SK뷰센트럴점
+    </div>
+</div>
+
+</body>
+</html>
